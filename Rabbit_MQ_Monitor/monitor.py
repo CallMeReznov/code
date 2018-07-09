@@ -2,7 +2,7 @@ import json
 import sys
 import requests
 #从API地址内获取队列JSON信息
-mq_api = requests.get(url='http://127.0.0.1:15672/api/queues', auth=('superadmin', 'admin'))
+mq_api = requests.get(url='API地址', auth=('账户', '密码'))
 mq_json = json.loads(mq_api.content.decode())
 
 #队列状态信息
