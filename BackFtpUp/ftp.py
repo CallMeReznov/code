@@ -1,6 +1,4 @@
-import sys ,configparser ,ftplib ,time ,os ,zipfile ,datetime
-from tqdm import tqdm
-
+import sys ,configparser ,ftplib ,time ,os ,datetime ,shutil ,encodings
 
 
 #载入配置文件参数
@@ -35,7 +33,7 @@ else:
     print('='*40)
     print('开始执行前置命令,请等待!')
     print('='*40)
-    if os.system(BAK_STARTcSHELL) == 0 :
+    if os.system(BAK_STARTSHELL) == 0 :
         print('='*40)
         print('前置任务执行完毕')
     else:
@@ -46,16 +44,9 @@ else:
 #打包文件
 print('='*40)
 print('打包开始！'+time.strftime('%H:%M:%S', time.localtime()))
-ftp_zip = zipfile.ZipFile('./Bakfile/'+BAK_DATE+'.zip','w')
 #打包指定目录下所有文件
-print('本次打包文件如下')
-for current_path, subfolders, filesname in os.walk(FTP_LOCAL):
-    for file in tqdm(filesname,ncols=100):
-        print(file)
-        ftp_zip.write(os.path.join(current_path,file),arcname=file)
-ftp_zip.close()
+shutil.make_archive('./Bakfile/'+BAK_DATE,'zip',FTP_LOCAL)
 print('打包完毕！'+time.strftime('%H:%M:%S', time.localtime()))
-
 #FTP上传备份文件
 FTP = ftplib.FTP(FTP_ADDR)
 FTP.set_pasv(0) #FTP模式 0主动模式 1 #被动模式
@@ -72,18 +63,8 @@ sizeWritten = 0
 n = 1
 totalSize = os.path.getsize('./Bakfile/'+BAK_DATE+'.zip')
 
-def call_back(block):
-    global sizeWritten
-    global n
-    while int(sizeWritten/1048576) == n :
-        with tqdm(total=totalSize,ncols=100,unit_scale=True,unit='M',miniters=1) as qbar:
-            qbar.update(sizeWritten)
-            n += 1
-    else:
-        pass
-    sizeWritten += bufsize
 
-FTP.storbinary('STOR '+BAK_DATE+'.zip',fp,bufsize,callback=call_back)
+FTP.storbinary('STOR '+BAK_DATE+'.zip',fp,bufsize)
 print('上传完毕！'+time.strftime('%H:%M:%S', time.localtime()))
 fp.close
 FTP.quit()
