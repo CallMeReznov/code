@@ -2,7 +2,7 @@
 #获取昨天日期
 CuTDateTime="`date +%m/%d/%Y -d "-1day"`"
 #获取指定日期流量总数
-ServerFluxCount=`vnstat -i eth0 -d |grep $cur_dateTime |awk -F "|" '{print $3}'`
+ServerFluxCount=`vnstat -i eth0 -d |grep $CuTDateTime |awk -F "|" '{print $3}'`
 
 if [ ${ServerFluxCount##*[0-9]} == "MiB" ]
 then
