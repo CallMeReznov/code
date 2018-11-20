@@ -7,7 +7,7 @@ ServerFluxCount=`vnstat -i eth0 -d |grep $CuTDateTime |awk -F "|" '{print $3}'`
 if [ ${ServerFluxCount##*[0-9]} == "MiB" ]
 then
     #打印记录的流量(单位Mib)
-    echo ${ServerFluxCount::-5}
+    echo ${ServerFluxCount::-5}|awk '{print int($0)}'
 
 else
     #打印记录的流量(单位Gib转换为Mib)
