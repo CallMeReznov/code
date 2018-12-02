@@ -11,5 +11,5 @@ then
 
 else
     #打印记录的流量(单位Gib转换为Mib)
-    echo ${ServerFluxCount::-5}*1000 |bc |echo ${ServerFluxCount::-5}*1000  |bc |awk '{print int($0)}'
+    echo ${ServerFluxCount::-5}*1000  |bc |awk '{print int($0)}'
 fi
