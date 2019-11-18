@@ -1,3 +1,3 @@
 Id,DName,DMod,Dlogin,DIp,DPort,DUser,DPasswd,DEpasswd
 1,Switch,Cisco,Ssh,10.10.10.254,23,ssh,ssh123456,123456
-2,Switch2,Cisco,Telnet,10.10.10.254,23,ssh,ssh123456,123456
+2,Switch2,Cisco,Telnet,10.10.10.254,22,ssh,ssh123456,123456
