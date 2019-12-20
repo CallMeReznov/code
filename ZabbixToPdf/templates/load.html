@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/layui.css">
+    <script src="../static/layui.js"></script>
+</head>
+<body>
+        <div class="layui-progress layui-progress-big" lay-filter="demo" lay-showPercent="true">
+                <div class="layui-progress-bar" lay-percent="10%"></div>
+                
+              </div>
+              
+    <script type="text/javascript">
+            function jindutiao(){
+                layui.use(['jquery', 'layer'], function(){ 
+                    var $ = layui.$;
+                    $.getJSON('http://127.0.0.1:5000/count',function(data){
+                        
+                        layui.use('element', function(){
+                            var element = layui.element;
+                            element.progress('demo', data.prx);
+                            loop = data.loop
+                            console.log(loop)
+                            if (loop == 1) {
+                                clearInterval (timer);
+                                window.alert("生成完毕")
+                            }        
+                          });
+                    },);
+                })
+            }
+              var timer =   setInterval("jindutiao()",1000);
+              
+        </script>
+</body>
+</html>

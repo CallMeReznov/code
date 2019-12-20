@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/layui.css">
+    <script src="../static/layui.js"></script>
+    <title>目录</title>
+</head>
+<body>
+    <div class="layui-container">
+        <div class="layui-row">
+                <div class="layui-col-md4 ">
+                    <form  class="layui-form-item" action="/" method="POST" id="systype">
+                            <div class="layui-input-block">
+                                    <select onchange="submitform()" name="grouid"  lay-verify="required">
+                                        <option style="display:none" value="0">全部</option>
+                                        <option value="0">全部</option>
+                                        <option value="16">Windows</option>
+                                        <option value="2">Linux</option>
+                                        <option value="9">Switch</option>
+                                        <option value="15">Switch1</option>
+                                        <option value="14">Virtual</option>
+                                    </select>
+                                </div>
+                    </form>
+                </div>
+                <div class="layui-col-md4 ">&nbsp
+                        <table class="layui-table" lay-size='sm'>
+                            <tr>
+                                <th>HostID</th>
+                                <th>HostIP</th>
+                                <!-- <th>HostName</th> -->
+                            </tr>
+                            
+                                {%for h in HostStat%}
+                                
+                                <tr>
+                                <td><a href="../r/{{h.hostid}}">{{h.hostid}}</a></td>
+                                <td><a href="../r/{{h.hostid}}">{{h.name}}</a></td>
+                                
+                                </tr>
+                                {%endfor%}
+                            
+                        </table>
+                </div>
+                <div class="layui-col-md4 ">
+                    <button onclick="test()">生成PDF</button>
+                </div>
+            
+        </div>
+    </div>
+    <script>
+        function test(){
+            layui.use(['jquery', 'layer'], function(){ 
+                var $ = layui.$;
+                $.get("/pdfconvert");
+                layui.use('layer',function(){
+                    var layer =layui.layer;
+                    layer.open({
+                        type: 2,
+                        title: 'PDF生成进度条,生成途中切勿刷新!',
+                        shadeClose: true,
+                        shade: 0.8,
+                        area: ['900px', '150px'],
+                        content: 'loading' //iframe的url
+                      });
+                    
+                });
+
+        })}
+        function submitform(){
+            var form = document.getElementById("systype");
+            form.submit();
+        }
+    </script>
+</body>
+</html>

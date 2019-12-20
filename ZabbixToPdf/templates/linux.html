@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/layui.css">
+    <title>{{title}}</title>
+</head>
+<body>
+        <div class="layui-container">
+                <div class="layui-row">
+                    <div class="layui-col-md2 ">&nbsp</div>
+                    <div class="layui-col-md8 " style="text-align: center;">
+                        <p style="font-size: 30px;" ><b>{{title}}</b></p>
+                    </div>
+                    <div class="layui-col-md2 ">&nbsp</div>
+                </div>
+                <div class="layui-row">
+                        <div class="layui-col-md2 ">&nbsp</div>
+                        <div class="layui-col-md8 ">&nbsp</div>
+                        <div class="layui-col-md2 ">&nbsp</div>
+                    </div>
+                <div class="layui-row">
+                    <div class="layui-col-md2 ">&nbsp</div>
+                    <div class="layui-col-md4 ">
+                        <p>巡检时间:<u>{{tl}}&nbsp&nbsp&nbsp</u></p>
+                    </div>
+                    <div class="layui-col-md4 " style="text-align: right;">
+                        <p>巡检人:_________________</p>
+                    </div>
+                    <div class="layui-col-md2 ">&nbsp</div>
+                </div>
+                <div class="layui-row">
+                        <div class="layui-col-md1 ">&nbsp</div>
+                        <div class="layui-col-md9 ">&nbsp</div>
+                        <div class="layui-col-md1 ">&nbsp</div>
+                    </div>
+                <div class="layui-row">
+                    <div class="layui-col-md2 ">&nbsp</div>
+                    <div class="layui-col-md8 ">
+                        <table class="layui-table" lay-size='sm'>
+        
+                               <tr>
+                              <td colspan="6" style="font-size: 20px;" ><b>服务器基本信息</b></td>
+                        </tr>
+                        <tr>
+                              <td colspan="1"  ><b>计算机名:</b></td>
+                              <td colspan="5">{{st}}</td>
+                        </tr>
+                        <tr>
+                                <td colspan="1"><b>应用类型:</b></td>
+                                <td colspan="5">{{hn}}</td>                                
+                        </tr>
+                        <tr>
+                                <td colspan="1">IP地址:</td>
+                                <td colspan="2">{{hi}}</td>
+                                <td colspan="1">MAC地址:</td>
+                                <td colspan="2"><pre>{{mac}}</pre></td>                                
+                        </tr>
+                                <tr>
+                                        <td colspan="2" style="font-size: 20px;"><b>检查文件系统</b></td>
+                                        <td colspan="4"><pre>{{dfh}}</pre></td>       
+                                </tr>
+                                <tr>
+                                        <td colspan="2" style="font-size: 20px;"><b>检查CPU使用率 <br> 检查内存使用率</b></td>
+                                        <td colspan="4"><pre>{{top}}</pre></td>       
+                                </tr>
+                                <tr>
+                                        <td colspan="2" style="font-size: 20px;"><b>空闲内存检查</b></td>
+                                        <td colspan="4"><pre>{{free}}</pre></td>       
+                                </tr>
+                                <tr>
+                                        <td colspan="2" style="font-size: 20px;"><b>用户登录检查</b></td>
+                                        <td colspan="4"><pre>{{last}}</pre></td>       
+                                </tr>
+                                <tr>
+                                        <td colspan="2" style="text-align: center; font-size: 20px;" ><b>检查 <br> oracle  <br>数据库连接数</b></td>
+                                        <td colspan="4"><pre>{{oracle}}</pre></td>       
+                                </tr>
+                                <tr>
+                                        <td colspan="6" style="font-size: 20px;" ><b>安全修复措施</b></td>
+                                </tr>
+                                <tr>
+                                        <td colspan="6" style="font-size: 20px;" ><b>修复程序</b></td>
+                                </tr>
+                                
+                        </table>
+                    </div>
+                    <div class="layui-col-md2 ">&nbsp</div>
+                </div>
+</body>
+</html>

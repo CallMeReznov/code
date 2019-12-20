@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../static/css/layui.css">
+</head>
+<body>
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md2 ">&nbsp</div>
+            <div class="layui-col-md8 " style="text-align: center;">
+                <p style="font-size: 30px;" ><b>{{title}}</b></p>
+            </div>
+            <div class="layui-col-md2 ">&nbsp</div>
+        </div>
+        <div class="layui-row">
+                <div class="layui-col-md2 ">&nbsp</div>
+                <div class="layui-col-md8 ">&nbsp</div>
+                <div class="layui-col-md2 ">&nbsp</div>
+            </div>
+        <div class="layui-row">
+            <div class="layui-col-md2 ">&nbsp</div>
+            <div class="layui-col-md4 ">
+                <p>巡检时间:<u>{{tl}}&nbsp&nbsp&nbsp</u></p>
+            </div>
+            <div class="layui-col-md4 " style="text-align: right;">
+                <p>巡检人:_________________</p>
+            </div>
+            <div class="layui-col-md2 ">&nbsp</div>
+        </div>
+        <div class="layui-row">
+                <div class="layui-col-md2 ">&nbsp</div>
+                <div class="layui-col-md8 ">&nbsp</div>
+                <div class="layui-col-md2 ">&nbsp</div>
+            </div>
+        <div class="layui-row">
+            <div class="layui-col-md2 ">&nbsp</div>
+            <div class="layui-col-md8 ">
+                <table class="layui-table" lay-size='sm'>
+
+                        <tr>
+                              <td colspan="6" style="font-size: 20px;" ><b>服务器基本信息</b></td>
+                        </tr>
+                        <tr>
+                              <td colspan="1"  ><b>计算机名:</b></td>
+                              <td colspan="5">{{st}}</td>
+                        </tr>
+                        <tr>
+                                <td colspan="1"><b>应用类型:</b></td>
+                                <td colspan="5">{{hn}}</td>                                
+                        </tr>
+                        <tr>
+                                <td colspan="1">IP地址:</td>
+                                <td colspan="2">{{hi}}</td>
+                                <td colspan="1">MAC地址:</td>
+                                <td colspan="2"></td>                                
+                        </tr>
+                        <tr>
+                                <td colspan="6" style="font-size: 20px;"><b>硬件状态检查</b></td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">系统信息灯状态</td>
+                                <td colspan="4">正常</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">硬盘指示灯状态</td>
+                                <td colspan="4">正常</td>
+                        </tr>
+                        <tr>
+                                <td colspan="6"  style="font-size: 20px;" ><b>系统安全检查</b></td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">网络连接状态是否正常</td>
+                                <td colspan="4">正常</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">检查系统日志有无严重报错</td>
+                                <td colspan="4">无</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">检查应用程序日志有无严重报错</td>
+                                <td colspan="4">无</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">检查审计日志有无异常记录</td>
+                                <td colspan="4">无</td>
+                        </tr>
+                        <tr>
+                                <td colspan="6" style="font-size: 20px;" ><b>系统性能检查</b></td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">检查CPU性能是否正常</td>
+                                <td colspan="4">正常</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">对磁盘进行错误检查</td>
+                                <td colspan="4">无</td>
+                        </tr>
+                        <tr>
+                                <td rowspan="4" colspan="2">检查内容使用率是否正常</td>
+                                <td colspan="2">可用物理内存:</td>
+                                <td colspan="2">{{fm}}MB</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">已使用物理内存:</td>
+                                <td colspan="2">{{um}}MB</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">物理内存使用率:</td>
+                                <td colspan="2">{{ump}}%</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">CPU使用率:</td>
+                                <td colspan="2">{{ucp}}%</td>
+                        </tr>
+                        <tr>
+                                <td rowspan="5" colspan="2">检查磁盘性能和使用率是否正常</td>
+                                <td colspan="1">卷名</td>
+                                <td colspan="1">总空间</td>
+                                <td colspan="1">可用空间</td>
+                                <td colspan="1">可用率</td>
+                        </tr>
+                        <tr>
+                                <td colspan="1">C:</td>
+                                <td colspan="1">{{dtc}}G</td>
+                                <td colspan="1">{{dfc}}G</td>
+                                <td colspan="1">{{dfcp}}%</td>
+                        </tr>
+                        <tr>
+                                <td colspan="1">D:</td>
+                                <td colspan="1">{{dtd}}G</td>
+                                <td colspan="1">{{dfd}}G</td>
+                                <td colspan="1">{{dfdp}}%</td>
+                        </tr>
+                        <tr>
+                                <td colspan="1">E:</td>
+                                <td colspan="1">{{dte}}G</td>
+                                <td colspan="1">{{dfe}}G</td>
+                                <td colspan="1">{{dfep}}%</td>
+                        </tr>
+                        <tr>
+                                <td colspan="1">F:</td>
+                                <td colspan="1">{{dtf}}G</td>
+                                <td colspan="1">{{dff}}G</td>
+                                <td colspan="1">{{dffp}}%</td>
+                        </tr>
+                        <tr>
+                                <td colspan="6" style="font-size: 20px;" ><b>安全修复措施</b></td>
+                        </tr>
+                        <tr>
+                                <td colspan="6" style="font-size: 20px;" ><b>修复程序</b></td>
+                        </tr>
+
+                </table>
+            </div>
+            <div class="layui-col-md2 ">&nbsp</div>
+        </div>
+
+
+</body>
+</html>
