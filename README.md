@@ -11,3 +11,4 @@ BackFtpUp **使用FTP远程备份的脚本,有前后置命令可以比较灵活�
 VnstatCount **使用vnstat作为数据源统计出昨天一天服务器的总流量(所有进出),Zabbix取值用脚本**  
 SwitchBak **批量备份网络交换机设备脚本**  
 DingTlak_Checkin **钉钉打卡通知脚本**
+ZabbixToPdf **利用Zabbix服务器的API生成PDF报告**
