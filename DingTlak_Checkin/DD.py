@@ -1,12 +1,14 @@
 import uiautomator2 as u2
-from dingtalkchatbot.chatbot import DingtalkChatbot
+#不再使用DD发送打卡消息,使用Server酱
+#from dingtalkchatbot.chatbot import DingtalkChatbot
+import requests
 import time ,oss2,datetime ,logging
 
 
 imagename = ((datetime.datetime.now().__format__('%Y%m%d%H%M')))+'.jpg'
 #填入你钉钉机器人的API地址
 webhook = '钉钉机器人API地址'
-xiaoding = DingtalkChatbot(webhook)
+#xiaoding = DingtalkChatbot(webhook)
 
 #具体操作请查询阿里OSS的SDK说明
 #填入你ali_oss相关权限的AccessKey,
@@ -46,7 +48,8 @@ except Exception as e:
     print(e)
     
     failmsg='打卡失败\n\n'+'失败原因:\n'+str(e)
-    xiaoding.send_markdown(title='失败',text=failmsg)
+    requests.get(url='https://sc.ftqq.com/SCKEY.send',params={'text':'打卡失败','desp':failmsg})
+    #xiaoding.send_markdown(title='失败',text=failmsg)
     exit()
 #能访问到上传图片的访问地址
 mdimage = '![截图](https://test.com/'+imagename+')'
@@ -55,7 +58,8 @@ mdimage = '![截图](https://test.com/'+imagename+')'
 time.sleep(60)
 
 try:
-    xiaoding.send_markdown(title='成功',text=mdimage)
+    requests.get(url='https://sc.ftqq.com/SCKEY.send',params={'text':'打卡成功','desp':mdimage})
+    #xiaoding.send_markdown(title='成功',text=mdimage)
     print('消息发送成功,打卡结束')
 except Exception as a:
     print(a)
