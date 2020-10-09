@@ -9,9 +9,9 @@ Debug目录下
 两个目录是必须的
   
 * config.ini:远程摄像头地址与联动COM口与对比差异值.  
-* core.py
-* encode.py
-是需要调用的核心python文件.   
+* core.py  是需要调用的核心python文件.   
+* encode.py  图片编码模块。  
+
 
 
 运行需要python的**face_recognition**库.   
