@@ -14,4 +14,4 @@ DingTlak_Checkin **钉钉打卡通知脚本**
 ZabbixToPdf **利用Zabbix服务器的API生成PDF报告**  
 face_recognition  **利用Github上的开源库写的人脸识别,可以调用rtsp与串口控制器进行门禁操作,C#写的GUI,Python写的核心**  <br>
 DisPlayCount **给人做个大屏展示,结果做出来没给钱,Winform的GUI读取PostGreSql数据库,不得不说Winform真好用**
-NodeMcu_Temperature  **NodeMcu开发板制作的机房监控**
+NodeMcu_Temperature  **NodeMcu开发板制作的机房温度监控**
