@@ -19,3 +19,7 @@ UserParameter=serroomtemp, sudo cat /dev/ttyUSB0 |head -n 1
 
 
 NodeMcu开发板10块,BMP180模块2元,配上面包板之类的20块钱即可制作简单的机房温度监控,配合zabbix可以设置监控报警.
+
+
+
+![成品](../NodeMcu_Temperature/Node.jpg)
