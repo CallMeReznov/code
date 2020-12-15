@@ -5,7 +5,7 @@
 * node.ino     Arduino主程序代码,请预先下载好**NodeMcu**开发板与**BMP180**库  
 * temperature.py    python取值,只取一次.  
 * main.py   python取值,循环取值.  
-* temperature c# winfrom写的GUI版获取API并发送给串口
+
 
 
 ### 使用方法
