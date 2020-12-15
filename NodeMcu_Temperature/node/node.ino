@@ -32,14 +32,14 @@ void setup() {
 	Serial.println("Could not find a valid BMP085 sensor, check wiring!");
 	while (1) {}
   }
-  pinMode(16,OUTPUT);
+  pinMode(2,OUTPUT);
 }
 
   
 void loop() {
-    digitalWrite(16, LOW);
+    digitalWrite(2, LOW);
     delay(500);
     Serial.println(bmp.readTemperature());
-    digitalWrite(16, HIGH);
+    digitalWrite(2, HIGH);
     delay(500);
 }
